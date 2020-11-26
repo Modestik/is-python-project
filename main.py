@@ -26,7 +26,8 @@ def main_function(original_image_filename, deformed_image_filename):
     row = math.ceil(height / n)
 
     # пороговая величина
-    threshold = n * 0.15
+    hash_length = 64
+    threshold = hash_length * 0.1
 
     # разбитие изображений на блоки
     orig_img_tiles = image_slicer.slice(original_image_filename, col=col, row=row, save=False)
@@ -57,6 +58,8 @@ def main_function(original_image_filename, deformed_image_filename):
 
 
 if __name__ == '__main__':
-    original_image_path = "./images/dog1.jpg"
-    deformed_image_path = "./images/dog2.jpg"
+    original_image_path = "./images/original_racoon.jpg"
+    deformed_image_path = "./images/deformed_racoon.jpg"
+    # original_image_path = "./images/original_squirrel.jpg"
+    # deformed_image_path = "./images/deformed_squirrel.jpg"
     main_function(original_image_path, deformed_image_path)
